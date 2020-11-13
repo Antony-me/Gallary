@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galary</title>
-</head>
-<body>
-    <h1>Welcome to my gallary</h1>
+{%extends 'base.html'%}
+
+{% block content %}
+    <div class="main">
+        <h1>Welcome to my Gallary</h1>
+        <img src="..static/images/seal.jpeg" alt="">
+      
+    </div>
     
-</body>
-</html>
+{{block.super}}
+{% endblock %}
