@@ -22,12 +22,13 @@ def image_location(request, location):
 
 
 def search_results(request):
-    if 'imagesearch' in request.GET and request.GET["imagesearch"]:
-        category = request.GET.get("imagesearch")
+    if 'categorysearch' in request.GET and request.GET["categorysearch"]:
+        category = request.GET.get("categorysearch")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
-        print(searched_images)
+        
         return render(request, 'gallary/search_results.html', {"message": message, "images": searched_images})
     else:
         message = "There are no images in that category"
         return render(request, 'gallary/search_results.html', {"message": message})
+

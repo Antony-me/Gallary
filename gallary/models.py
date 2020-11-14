@@ -4,6 +4,10 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
+    def get_categorys(cls):
+        categorys = Category.objects.all()
+        return categorys
+
     def __str__(self):
         return self.name
 
@@ -54,6 +58,7 @@ class Image(models.Model):
     def filter_by_location(cls, location):
         image_location = Image.objects.filter(location__name=location).all()
         return image_location
+        
 
     @classmethod
     def update_image(cls, id, value):
@@ -69,6 +74,12 @@ class Image(models.Model):
     def search_by_category(cls, category):
         images = cls.objects.filter(category__name__icontains=category)
         return images
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        news = cls.objects.filter(title__icontains=search_term)
+        return news
+
 
     def __str__(self):
         return self.name
