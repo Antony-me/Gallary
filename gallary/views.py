@@ -8,12 +8,11 @@ def home(request):
 
     images = Image.get_images()
  
-    return render(request, 'home.html', {'images':images})
+    return render(request, 'gallary/home.html', {'images':images})
 
 def about(request):
 
     return render(request, 'about.html')
-
 
 def image_location(request, location):
     images = Image.filter_by_location(location)
