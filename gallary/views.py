@@ -11,14 +11,11 @@ def home(request):
  
     return render(request, 'gallary/home.html', {'images':images, 'locations':locations})
 
-def about(request):
-    return render(request, 'about.html')
-
 
 def image_location(request, location):
     images = Image.filter_by_location(location)
-    print(images)
-    return render(request, 'gallary/location.html', {'location_images': images})
+    
+    return render(request, 'gallary/location.html', {'images': images})
 
 
 def search_results(request):

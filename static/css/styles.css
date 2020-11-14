@@ -1,9 +1,22 @@
 
 *{
     color: rgb(31, 28, 28);
+
 }
+
+h1{
+    font-weight: bolder;
+    font-family: 'Fondamento', cursive;
+    font-size: 50px;
+    padding-top: 7%;
+
+    
+
+}
+
 .header{
     height: 350px;
+    border-bottom: 1px solid  rgb(29, 27, 27);
 }
 
 .jumbotron{
@@ -15,13 +28,8 @@
     padding: 5px;
 }
 
-.navbar{
-    color: red;
-    
-}
-
 body{
-    background-image: url(../images/pets2.jpg);
+    background-image: url(../images/pets3.png);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
