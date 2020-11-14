@@ -1,10 +1,7 @@
 from django.test import TestCase
-
-# Create your tests here.
-from django.test import TestCase
-
 from .models import Image, Category, Location
 
+# Create your tests here. 
 
 class TestImage(TestCase):
     def setUp(self):
@@ -75,9 +72,9 @@ class TestImage(TestCase):
 
     def test_search_image_by_category(self):
         category = 'Game'
-        found_img = self.image_test.search_by_category(category)
+        found_img = self.image.search_by_category(category)
         self.assertTrue(len(found_img) > 1)
-    self.assertTrue(found_image, image)
+        self.assertTrue(found_img, Image)
 
     '''
      Test to test filter_image_by_location method
@@ -128,7 +125,7 @@ class TestLocation(TestCase):
     def test_get_locations(self):
         self.location.save_location()
         locations = Location.get_locations()
-        self.assertTrue(len(locations) > 1)
+        self.assertTrue(locations, 'Nairobi') 
 
 
     
@@ -137,10 +134,9 @@ class TestLocation(TestCase):
     '''
 
     def test_update_location(self):
-        new_location = 'Nowhere'
-        self.location.update_location(self.location.id, new_location)
-        changed_location = Location.objects.filter(name='Nowhere')
-        self.assertTrue(len(changed_location) > 0)
+        self.location.update_location(self.location.id, 'Nowhere')
+        new_location = Location.objects.filter(name='Nowhere')
+        self.assertTrue(new_location, 'Nowhere' )
 
     
     '''

@@ -44,6 +44,12 @@ class Image(models.Model):
     category = models.ForeignKey(Category,  on_delete = models.CASCADE)
     location = models.ForeignKey(Location,  on_delete = models.CASCADE)
 
+
+    @classmethod
+    def get_images(cls):
+        image = Image.objects.all()
+        return image
+
     @classmethod
     def filter_by_location(cls, location):
         image_location = Image.objects.filter(location__name=location).all()
@@ -52,6 +58,7 @@ class Image(models.Model):
     @classmethod
     def update_image(cls, id, value):
         cls.objects.filter(id=id).update(image=value)
+
 
     @classmethod
     def get_image_by_id(cls, id):

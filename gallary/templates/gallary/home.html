@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{% block content %}
+    <div class="main">
+        <h1>Welcome to my Gallary</h1>
+   
+        {% for image in images%}
+            <p>{{image.description}}</p>
+            <img src="{{image.image.url}}" alt="{{image.name}}" class="img-responsive">
+        {% endfor %}
+    </div>
+{{block.super}}
+{% endblock %}
