@@ -1,11 +1,11 @@
 {% extends 'gallary/base.html' %}
 {% block content %}
-<div class="jumbotron">
+<div class="">
     <h2> Gallery</h2>
     <hr>
 
     {% if location_images %}
-    <div class="card-columns">
+    <div class="jumbotron">
 
         {% for image in location_images %}
 
@@ -17,7 +17,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content modalcard">
                     <div class="modal-header">
-                        <h5 class="modal-title d-block mx-auto" id="exampleModalLongTitle"><small>Image Name:</small> {{image.name}}</h5>
+                        <h5 class="modal-title d-block mx-auto" id="exampleModalLongTitle"><small>Image Name::</small> {{image.name}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

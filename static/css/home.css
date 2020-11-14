@@ -1,0 +1,15 @@
+.header{
+    background-image: url(../images/whale.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 690px;
+}
+
+.jumbotron{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jumbotron .card{
+    padding: 5px;
+}
