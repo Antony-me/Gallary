@@ -1,8 +1,9 @@
 .header{
-    background-image: url(../images/whale.jpg);
+    /* background-image: url(../images/whale.jpg); */
     background-position: center;
+    background-attachment: fixed;
     background-size: cover;
-    height: 690px;
+    height: 250px;
 }
 
 .jumbotron{
@@ -12,4 +13,17 @@
 
 .jumbotron .card{
     padding: 5px;
+}
+
+.navbar{
+    color: red;
+    
+}
+
+body{
+    background-image: url(../images/pets2.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
 }
