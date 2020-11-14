@@ -1,18 +1,19 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 import datetime as dt
-from .models import Image
+from .models import Image, Location
 
 # Create your views here
 def home(request):
 
     images = Image.get_images()
+    locations = Location.get_locations()
  
-    return render(request, 'gallary/home.html', {'images':images})
+    return render(request, 'gallary/home.html', {'images':images, 'locations':locations})
 
 def about(request):
-
     return render(request, 'about.html')
+
 
 def image_location(request, location):
     images = Image.filter_by_location(location)
