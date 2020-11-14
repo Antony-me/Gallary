@@ -1,3 +1,87 @@
+
+*{
+    color: rgb(31, 28, 28);
+}
+.header{
+    height: 350px;
+}
+
+.jumbotron{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jumbotron .card{
+    padding: 5px;
+}
+
+.navbar{
+    color: red;
+    
+}
+
+body{
+    background-image: url(../images/pets2.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
 img{
     width: 245px;
+    height: 175px;
+}
+
+.jumbotron img:hover{
+    animation: wobbles 2s infinite;
+}
+
+@keyframes wobbles {
+    0% {
+      transform: translateY(-10);
+    }
+    15% {
+      transform: translateY(-10px);
+    }
+    
+}
+
+
+
+.social ul{
+    list-style: none;
+    text-align: center;
+    display: inline;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: rgb(29, 27, 27);
+    
+}
+
+.social img{
+    width: 70%;
+    height: 100%;
+}
+
+.social li:hover{
+    animation: wobble 2s infinite;
+}
+
+@keyframes wobble {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(10);
+    }
+    10% {
+      transform: translateY(-10px);
+    }
+    20% {
+      transform: translateY(-10px);
+    }
+}
+
+footer{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: 200;
 }
