@@ -1,1 +1,1 @@
-web: gunicorn Ips.wsgi --log-file -
+web: gunicorn IPs.wsgi --log-file -
