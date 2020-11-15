@@ -32,7 +32,7 @@ SECRET_KEY = 't=4!qsyg8@4l0x#mzg*it9pmnhlp2u#ioztf7qvl&f%6neyy4('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gallarysnap.herokuapp.com/']
 
 
 # Application definition

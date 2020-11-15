@@ -1,1 +1,1 @@
-web: gunicorn gallary.wsgi --log-file -
+web: gunicorn Ips.wsgi --log-file -
