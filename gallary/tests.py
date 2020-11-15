@@ -71,10 +71,9 @@ class TestImage(TestCase):
     ''' 
 
     def test_search_image_by_category(self):
-        category = 'Game'
-        found_img = self.image.search_by_category(category)
-        self.assertTrue(len(found_img) > 1)
-        self.assertTrue(found_img, Image)
+        found_img = self.image_test.search_by_category(self.category)
+        image = Image.objects.filter().all
+        self.assertTrue(found_img, image)
 
     '''
      Test to test filter_image_by_location method
@@ -134,9 +133,9 @@ class TestLocation(TestCase):
     '''
 
     def test_update_location(self):
-        self.location.update_location(self.location.id, 'Nowhere')
-        new_location = Location.objects.filter(name='Nowhere')
-        self.assertTrue(new_location, 'Nowhere' )
+        self.location.update_location(id=1, value='Nowhere')
+        locations = Location.get_locations()
+        self.assertTrue(locations, 'Nowhere' )
 
     
     '''

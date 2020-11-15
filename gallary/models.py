@@ -1,8 +1,10 @@
 from django.db import models
 
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
+  
 
     def get_categorys(cls):
         categorys = Category.objects.all()
@@ -31,7 +33,8 @@ class Location(models.Model):
 
     @classmethod
     def update_location(cls, id, value):
-        cls.objects.filter(id=id).update(image=value)
+        cls.objects.filter(id=id).update(name=value)
+        
 
     def save_location(self):
         self.save()
@@ -71,14 +74,9 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_by_category(cls, category):
-        images = cls.objects.filter(category__name__icontains=category)
-        return images
-
-    @classmethod
-    def search_by_title(cls,search_term):
-        news = cls.objects.filter(title__icontains=search_term)
-        return news
+    def search_by_category(cls, search_term):
+        searched_image = Image.objects.filter(category__name__icontains=search_term)
+        return searched_image
 
 
     def __str__(self):

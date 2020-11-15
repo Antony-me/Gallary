@@ -9,9 +9,10 @@ h1{
     font-family: 'Fondamento', cursive;
     font-size: 50px;
     padding-top: 7%;
-
-    
-
+    text-decoration: none;
+}
+h1 a:link{
+    text-decoration: none;
 }
 
 .header{
