@@ -13,6 +13,7 @@ class TestImage(TestCase):
 
         self.image_test = Image(id=1, name='image', description='this is a test image', location=self.location,
                                 category=self.category)
+        self.image_test.save_image()
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image_test, Image))
@@ -51,8 +52,8 @@ class TestImage(TestCase):
     ''' 
 
     def test_get_image_by_id(self):
-        found_image = self.image_test.get_image_by_id(self.image_test.id)
-        image = Image.objects.filter(id=self.image_test.id)
+        found_image = self.image_test.get_image_by_id(id=1)
+        image = Image.objects.filter(id=1)
         self.assertTrue(found_image, image)
 
     '''
