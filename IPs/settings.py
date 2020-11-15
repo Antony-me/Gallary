@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -139,3 +140,13 @@ STATICFILES_DIRS = [
 #.........
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+cloudinary.config( 
+  cloud_name = "dpcrhvllf", 
+  api_key = "517714219614197", 
+  api_secret = "RxTgjb9mL9Wghh3mCPklvlyCoyM" 
+)
+
+
+django_heroku.settings(locals())

@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 
 
@@ -44,7 +45,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image =CloudinaryField('image', default="./static/images/jerin-j-DcdW4R7eMOg-unsplash.jpg")
     name = models.CharField(max_length=60)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
