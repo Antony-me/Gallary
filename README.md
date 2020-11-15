@@ -6,6 +6,8 @@
 
 This is a Django web application that is for displaying my photos taken from different locations and then put into different categories for viewing and searching.
 
+<img src="static/images/gallary-app.png">
+
 ## Technologies Used
 
 - Python
