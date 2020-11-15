@@ -1,17 +1,22 @@
 {% extends 'gallary/base.html' %}
 {% block content %}
 <div class="container">
-
     {% if images %}
-    <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
+        <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
+
+        <div class="card" data-toggle="modal" data-target="#{{image.id}}">
+            <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img">
+        </div>
     {% else %}
     <h2 class="text-center" id="foundnon"> Found 0 images for your search {{message}}</h2>
-
+        <br>
     <a class="d-block mx-auto" href="/">
-        <button class="btn btn-sm btn-info d-block mx-auto">Back Home</button>
+        <button class="btn btn-sm btn-info d-block mx-auto">Go back Home</button>
     </a>
     {% endif %}
     {% if images %}
+
+
     <div class="card-columns">
         {% for image in images %}
         <div class="card" data-toggle="modal" data-target="#{{image.id}}">
@@ -42,7 +47,6 @@
                 </div>
             </div>
         </div>
-
 
         {% endfor %}
     </div>

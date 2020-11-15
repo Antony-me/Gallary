@@ -73,7 +73,7 @@ class TestImage(TestCase):
 
     def test_search_image_by_category(self):
         found_img = self.image_test.search_by_category(self.category)
-        image = Image.objects.filter().all
+        image = Image.objects.all()
         self.assertTrue(found_img, image)
 
     '''

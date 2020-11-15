@@ -27,14 +27,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
+                        <img src="{{image.image.url}}" alt="{{image.name}}" class="img-responsive"   style="width:700px; margin: auto;">
                         <p>{{image.description}}</p>
                         <small>Category:</small> <a href="/category/{{image.category}}">{{image.category}} </a> <br> <small>Location:</small><a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{image.location}}</a>
                     </div>
                     <div class="modal-footer">
-                        <input class="form-control input-lg" type="text"
-                               value="{{image.image.url}}" id="{{image.id}}.url">
-                        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+
+                        <!-- <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="link">
+                        <button class="btn btn-success btn-sm" onclick="copylink()">Copy</button> -->
+
+                        <input type="text" value="{{ image.image.url }}" id="{{image.id}}.url">
+                        <button onclick="copyLink()">Copy text</button>
+
+
                         <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
                         </button>
                     </div>
