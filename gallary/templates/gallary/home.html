@@ -3,10 +3,13 @@
 <div class="container-fluid landing header">
     <h1 class="text-center"><a href="#"></a> <strong><em>Welcome </em>to <a href="{% url 'home' %}"><em>sNAP</em>SH0T</a></strong></h1>
 </div>
+
     <div class="container">
         <h3 class="text-left"><strong>Gallary</strong></h3> 
         <div class="row">
             <div>
+
+
                 <form role="search" action="{% url 'search_results' %}">
         
                   <div class="input-group">
@@ -16,12 +19,17 @@
                     </div>
                   </div>
                 </form> <br>
-                <div> 
+                <div>
+                    
+                    
+
                     <strong>
                     Locations:{% for location in locations %} 
                         <a style="background-color: rgb(29, 27, 27);" class="text-right btn btn-outline-info btn-sm" id="btn" href="/location/{{location.name}}">{{location.name}}</a>
                     {%endfor%}
                     </strong>
+
+
                 </div>
               </div>
         </div>
@@ -31,6 +39,9 @@
             <div class="card" data-toggle="modal" data-target="#{{image.id}}">
                 <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img">
             </div>
+
+
+            
             <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered modal-md" role="document">
@@ -42,7 +53,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{image.image.url}}" alt="{{image.name}}" class="img-responsive"   style="width:700px; margin: auto;">
+                            <img src="{{image.image.url}}" alt="{{image.name}}" class="img-responsive"   style="width:700px; margin: auto; height: 400px;">
                             <p>{{image.description}}</p>
                             <small>Category:</small> <a href="/category/{{image.category}}">{{image.category}} </a> <br> <small>Location:</small><a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{image.location}}</a>
                         </div>

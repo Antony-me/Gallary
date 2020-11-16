@@ -91,4 +91,4 @@ class Image(models.Model):
         self.delete()
 
     class Meta:
-        ordering = ['date']
+        ordering = ['name']
