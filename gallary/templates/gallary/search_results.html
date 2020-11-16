@@ -1,12 +1,11 @@
 {% extends 'gallary/base.html' %}
 {% block content %}
+<div class="container-fluid landing header">
+    <h1 class="text-center"><a href="#"></a><a href="{% url 'home' %}"><em>Searched</em>SH0ts</a></strong></h1>
+</div>
 <div class="container">
     {% if images %}
         <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
-
-        <div class="card" data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img">
-        </div>
     {% else %}
     <h2 class="text-center" id="foundnon"> Found 0 images for your search {{message}}</h2>
         <br>
@@ -16,12 +15,12 @@
     {% endif %}
     {% if images %}
 
-
-    <div class="card-columns">
+    <div class="card-columns jumbotron">
         {% for image in images %}
         <div class="card" data-toggle="modal" data-target="#{{image.id}}">
             <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img">
         </div>
+
         <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
